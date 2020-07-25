@@ -8,31 +8,34 @@ import ProjectsSection from './components/projects-section/ProjectsSection.compo
 import AboutMeSection from './components/aboutme-section/AboutMeSection.component';
 import Footer from './components/footer/Footer.component';
 
-import {navItems, backgroundSections } from './defaultConfig.config';
+import { navItems, backgroundSections } from './defaultConfig.config';
 
+const App = () => (
+  <>
+    <Navbar navItems={navItems} navSectionsSync />
 
-const App = () => {
-  return (
-    <>
-      <Navbar navItems={navItems} navSectionsSync/>
+    <Section
+      id="welcome-section"
+      backgroundImage={backgroundSections.welcomeSection}
+    >
+      <WelcomeSection />
+    </Section>
 
-      <Section id='welcome-section'
-      backgroundImage={backgroundSections.welcomeSection}>
-          <WelcomeSection />
-      </Section>
-      
-      <Section id="projects-section"
-      backgroundImage={backgroundSections.projectsSection}>
-          <ProjectsSection/>
-      </Section>
+    <Section
+      id="projects-section"
+      backgroundImage={backgroundSections.projectsSection}
+    >
+      <ProjectsSection />
+    </Section>
 
-      <Section id='about-me-section' 
-      backgroundImage={backgroundSections.aboutMeSection}>
-            <AboutMeSection/>
-      <Footer/>
-      </Section>
-    </>
-  );
-};
+    <Section
+      id="about-me-section"
+      backgroundImage={backgroundSections.aboutMeSection}
+    >
+      <AboutMeSection />
+      <Footer />
+    </Section>
+  </>
+);
 
 export default App;
